@@ -74,7 +74,7 @@ router.post('/getFavoredMovie', (req, res) => {
 })
 
 
-// Favorite 화면에서 추가한 즐겨찾기를 삭제하는 기능
+// Favorite 화면에서 추가한 즐겨찾기를 삭제하는 기능, 위에 있는 removeFromFavorite과 소스가 똑같음 
 // router.post('/removeFromFavorite', (req, res) => {
 
 //     Favorite.findOneAndDelete({ movieId: req.body.movieId, userFrom: req.body.userFrom })
