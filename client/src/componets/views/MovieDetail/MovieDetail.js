@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_KEY, API_URL, IMAGE_BASE_URL } from '../../Config'
 import MainImage from '../commons/MainImage'
-import MovieInfo from './Sections/MovieInfo'
 import GridCard from '../commons/GridCards'
+import MovieInfo from './Sections/MovieInfo'
+import Favorite from './Sections/Favorite'
 
 function MovieDetail() {
 
@@ -51,6 +52,12 @@ function MovieDetail() {
 
         {/* Body */}
         <div style={{ width: '85%', margin: '1rem auto' }}>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {Movie &&
+                <Favorite movieInfo = {Movie} movieId = {param.movieId} userFrom = {localStorage.getItem('userId')}/>
+            }
+            </div>
 
             {/* MovieInfo */}
             {Movie &&

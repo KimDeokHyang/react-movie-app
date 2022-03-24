@@ -20,7 +20,7 @@ export function loginUser(dataTosubmit){
 
 export function logoutUser(){
     
-    const request = Axios.get(`${USER_SERVER}/logout'`)
+    const request = Axios.get(`${USER_SERVER}/logout`)
         .then(response => response.data)
 
     return {
@@ -31,7 +31,7 @@ export function logoutUser(){
 
 export function registerUser(dataTosubmit){
     
-    const request = Axios.post(`${USER_SERVER}/register'`, dataTosubmit)
+    const request = Axios.post(`${USER_SERVER}/register`, dataTosubmit)
         .then(response => response.data)
 
     return {

@@ -14,13 +14,14 @@ import RegisterPage from './views/RegisterPage/RegisterPage'
 import NavBar from './views/NavBar/NavBar'
 import Footer from './views/Footer/Footer'
 import MovieDetail from './views/MovieDetail/MovieDetail';
-
+import FavoritePage from './views/FavoritePage/FavoritePage';
 
 function App() {
   const AuthLandingPage = Auth(LandingPage, null);
   const AuthLoginPage = Auth(LoginPage, false);
   const AuthRegisterPage = Auth(RegisterPage, false);
   const AuthMovieDetailPage = Auth(MovieDetail, null);
+  const AuthFavoritePage = Auth(FavoritePage, true);
 
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
@@ -31,6 +32,7 @@ function App() {
             <Route path="/login" element={<AuthLoginPage />} />
             <Route path="/register" element={<AuthRegisterPage />} />
             <Route path="/movie/:movieId" element={<AuthMovieDetailPage />} />
+            <Route path="/favorite" element={<AuthFavoritePage />} />
           </Routes>
         </div>
       <Footer />
